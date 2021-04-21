@@ -1,0 +1,85 @@
+.contact {
+    padding: 120px 0 60px 0;
+    .section__title {
+        text-align: left;
+        &:before {
+            left: 15px;
+        }
+    }
+    .contact__text {
+        font-size: 1.6rem;
+        color: #696478;
+        font-family: nunito-regular;
+        margin-top: 20px;
+        display: block;
+        i {
+            margin-right: 5px;
+            color: $orange;
+        }
+    }
+    .contact__form {
+        display: flex;
+        flex-wrap: wrap;
+        @include breakpoint(767) {
+            margin-top: 45px;
+        }
+        textarea {
+            background-color: #f7f2ea;
+            padding: 20px 30px;
+            font-size: 1.6rem;
+            font-family: nunito-regular;
+            color: #696478;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            box-shadow: none;
+        }
+        input {
+            background-color: #f7f2ea;
+            padding: 20px 30px;
+            font-size: 1.6rem;
+            font-family: nunito-regular;
+            color: #696478;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            box-shadow: none;
+        }
+        button {
+            display: inline-block;
+            color: #fff;
+            background-color: $orange;
+            font-family: asl-bold;
+            font-size: 2.2rem;
+            padding: 15px 15px;
+            border-radius: 5px;
+            margin-left: 15px;
+            margin-top: 30px;
+        }
+    }
+}
+
+.branch {
+    background-color: #f7f2ea;
+    margin-top: 50px;
+    padding: 80px 0;
+    .contact__branch {
+        margin-top: 40px;
+        .branch__name {
+            font-size: 2rem;
+            color: $base-color;
+            font-family: asl-bold;
+        }
+        .branch__text {
+            margin-top: 15px;
+            font-family: nunito-regular;
+            font-size: 1.6rem;
+            color: #696478;
+            i {
+                margin-right: 5px;
+                color: $orange;
+            }
+        }
+    }
+}

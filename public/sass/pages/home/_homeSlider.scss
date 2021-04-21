@@ -1,0 +1,33 @@
+.homeSlider {
+    &-carousel {
+        .homeSlider__item {
+            position: relative;
+            .homeSlider__image {
+                width: 100%;
+            }
+        }
+        .owl-dots {
+            bottom: 10px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            .active {
+                span {
+                    border: 5px solid #fff!important;
+                    display: block;
+                }
+            }
+            .owl-dot {
+                margin: 0 5px;
+                span {
+                    width: 15px;
+                    height: 15px;
+                    background-color: transparent;
+                    border: 5px solid #5d4992;
+                    display: block;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+// =============== Font ================= //
+@font-face {
+    font-family: nunito-light;
+    src: url(/font/Nunito-Light.ttf)
+}
+
+@font-face {
+    font-family: nunito-regular;
+    src: url(/font/Nunito-Regular.ttf);
+}
+
+@font-face {
+    font-family: nunito-semibold;
+    src: url(/font/Nunito-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: nunito-bold;
+    src: url(/font/Nunito-Bold.ttf);
+}
+
+@font-face {
+    font-family: asl-light;
+    src: url(/font/Nunito-Regular.ttf);
+}
+
+@font-face {
+    font-family: asl-regular;
+    src: url(/font/Nunito-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: asl-bold;
+    src: url(/font/Nunito-Bold.ttf);
+}
+
+// =============== Color ================= //
+
+/* Social Media
+--------------------------------------------- */
+
+$facebook-color:#4267B2;
+$youtube-color:#FF0000;
+$twitter-color:#1DA1F2;
+$linkedIn-color:#2867B2;
+
+/* Main Color
+--------------------------------------------- */
+
+$base-color:#341c77;
+$light-violet:#c8bee3;
+$orange:#fe6500;

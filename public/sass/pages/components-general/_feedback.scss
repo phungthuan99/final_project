@@ -1,0 +1,89 @@
+.feedback {
+    background: url(../images/feedback-background.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 120px 0;
+    height: 100%;
+    .feedback-carousel {
+        .feedback__item {
+            background-color: #fff;
+            padding: 80px 100px;
+            margin: 60px auto 60px auto;
+            width: 72%;
+            border-radius: 8px;
+            position: relative;
+            @include breakpoint(767) {
+                padding: 50px 50px;
+                width: 100%;
+            }
+            @include breakpoint(424) {
+                padding: 75px 20px;
+            }
+            &:before {
+                content: "\f10d";
+                font-family: fontawesome;
+                position: absolute;
+                top: 30px;
+                left: 30px;
+                font-size: 3rem;
+                color: $orange
+            }
+            &:after {
+                content: "\f10e";
+                font-family: fontawesome;
+                position: absolute;
+                bottom: 30px;
+                right: 30px;
+                font-size: 3rem;
+                color: $orange
+            }
+            &-content {
+                font-size: 3rem;
+                color: #696478;
+                font-family: nunito-light;
+                text-align: center;
+                margin-bottom: 15px;
+                @include breakpoint(767) {
+                    font-size: 2rem;
+                }
+            }
+            &-author {
+                font-size: 2rem;
+                font-family: nunito-bold;
+                color: $base-color;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            &-job {
+                font-size: 1.8rem;
+                font-family: nunito-regular;
+                color: #696478;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            &-avatar {
+                width: 40px;
+                height: 40px;
+                background-color: $base-color;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+        }
+        .owl-dots {
+            .active {
+                span {
+                    border: 5px solid #fff!important;
+                }
+            }
+            .owl-dot {
+                span {
+                    width: 15px;
+                    height: 15px;
+                    background-color: transparent;
+                    border: 5px solid #5d4992;
+                }
+            }
+        }
+    }
+}

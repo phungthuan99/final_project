@@ -1,0 +1,50 @@
+.alert-noti {
+    position: fixed;
+    z-index: 999999;
+    top: 12px;
+    right: 12px;
+    width: 425px;
+    padding: 10px 0px;
+    margin: 0 0 6px;
+    overflow: hidden;
+    filter: alpha(opacity=95);
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    opacity: 0.95;
+    background-color: #00c851;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    animation: noti .5s alternate;
+    color: #fff;
+}
+
+@keyframes noti {
+    0% {
+        top: calc(0% - 200px);
+    }
+    100% {
+        top: 12px;
+    }
+}
+
+.alert-noti p {
+    color: #fff;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+}
+
+.alert-noti .close-noti {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #fff;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}

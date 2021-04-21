@@ -1,0 +1,88 @@
+body {
+    font-family: Inter, sans-serif;
+    background-color: #f1f5f7;
+}
+
+.profile__inner {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+    border: none!important;
+}
+
+.profile__inner .profile__inner-head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profile__inner .profile__inner-head .info h4 {
+    font-size: 23px;
+}
+
+.profile__inner .profile__inner-head .avatar {
+    width: 75px;
+    max-width: 100%;
+    margin-right: 20px;
+}
+
+.profile__inner .profile__inner-head .avatar img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.profile__inner .profile__inner-body {
+    font-size: 15px;
+}
+
+.profile__inner .profile__inner-body p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile__detail {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+    border: none!important;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.profile__detail .form-control,
+.profile__detail .col-form-label {
+    font-size: 15px;
+}
+
+
+/* Notification */
+
+.notification {
+    background-color: #fff;
+}
+
+.notification .notification__item {
+    border-right: 1px solid #ebedf2;
+    padding: 30px;
+}
+
+.notification .notification__item h1 {
+    font-size: 23px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.notification .notification__item .notification__item-list ul {}
+
+.notification .notification__item .notification__item-list ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #c5ccdf;
+}
+
+.notification .notification__item .notification__item-list ul li p {
+    margin-bottom: 3px;
+    font-size: 13px;
+    font-style: italic;
+    color: #74788d
+}

@@ -1,0 +1,33 @@
+.about__content {
+    background-color: #f7f2ea;
+    padding: 120px 0;
+    .section__title {
+        text-align: left;
+        &:before {
+            left: 15px;
+        }
+    }
+    &-text {
+        margin-top: 30px;
+        font-family: nunito-regular;
+        font-size: 2.2rem;
+        color: #696478;
+    }
+}
+
+.about__number {
+    padding: 120px 0;
+    &-item {
+        text-align: center;
+        .number {
+            font-size: 6rem;
+            color: $base-color;
+            font-family: asl-regular;
+        }
+        .item__name {
+            font-family: nunito-regular;
+            font-size: 1.6rem;
+            color: #696478;
+        }
+    }
+}

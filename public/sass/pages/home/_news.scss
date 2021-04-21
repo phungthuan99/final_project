@@ -1,0 +1,82 @@
+.news {
+    padding: 120px 0;
+    &__item {
+        margin-top: 60px;
+        &-image {
+            margin-bottom: 2.5rem;
+            height: 300px;
+            overflow: hidden;
+            img {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
+        }
+        &-info {
+            .news__item-date {
+                font-size: 1.6rem;
+                color: $orange;
+                font-family: nunito-semibold;
+            }
+            .news__item-title {
+                font-size: 3rem;
+                font-family: asl-bold;
+                color: $base-color;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                margin: 10px 0 25px 0;
+                &:hover {
+                    color: $orange;
+                }
+            }
+            .news__item-desc {
+                height: 77px;
+                font-size: 1.6rem;
+                color: #696478;
+                font-family: nunito-regular;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
+        }
+    }
+    .news__pagination {
+        margin-top: 50px;
+        .pagination {
+            justify-content: flex-end;
+            .active {
+                .page-link {
+                    color: #fff!important;
+                    background-color: $base-color;
+                    border: 1px solid $base-color;
+                }
+            }
+            .page-item {
+                .page-link {
+                    color: $base-color;
+                    font-size: 1.5rem;
+                    font-family: nunito-regular;
+                    padding: 10px;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.post-content {
+    height: 77px;
+    font-size: 1.6rem;
+    color: #696478;
+    font-family: nunito-regular;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}

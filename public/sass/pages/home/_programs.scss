@@ -1,0 +1,29 @@
+.programs {
+    padding: 120px 0;
+    background-color: #f7f2ea;
+    .programs__block {
+        margin-top: 60px;
+        background-color: #fff;
+        img {
+            width: 100%;
+        }
+        .programs__block-text {
+            padding: 50px;
+            @include breakpoint(1199) {
+                padding: 20px;
+            }
+            .programs__block-name {
+                font-size: 2.4rem;
+                color: $base-color;
+                font-family: asl-bold;
+                margin-bottom: 20px;
+                margin-top: 10px;
+            }
+            .programs__block-desc {
+                color: #696478;
+                font-family: nunito-regular;
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
