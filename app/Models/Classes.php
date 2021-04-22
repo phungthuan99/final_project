@@ -51,4 +51,7 @@ class Classes extends Model
         return $this->belongsTo('App\Models\Level', 'level_id','id');
     }
 
+    public function getSchedule(){
+        return $this->belongsTo('App\Models\Schedule', 'level_id','id');
+    }
 }

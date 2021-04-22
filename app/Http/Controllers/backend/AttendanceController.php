@@ -70,9 +70,10 @@ class AttendanceController extends Controller
      */
     public function show($id)
     {
+
         $data['schedules'] = Schedule::where("class_id", $id)->get();
         $data['class'] = Classes::find($id);
-        $data['passed'] = Schedule::where('time','<', now())->where('class_id', $id)->get();
+        $data['pasts'] = Schedule::where('time','<', now())->where('class_id', $id)->get();
 
         return view('backend.pages.attendance.schedule',$data);
     }

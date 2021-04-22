@@ -14,6 +14,7 @@ class QuizController extends Controller
 {
     public function index()
     {
+        // dd(Classes::find(12)->getSchedule());
         $data['profile'] = Student::find(Auth::guard('student')->user()->id)->class_id;
 
         $quiz=array();
@@ -26,7 +27,6 @@ class QuizController extends Controller
         foreach (Schedule::where('class_id', Student::find(Auth::guard('student')->user()->id)->class_id)->get() as $key => $schedule) {
             $date_quiz[] = $schedule;
         }
-
 
         // check nút làm bài
         $student_id_and_quiz_and_level_id = array();

@@ -48,10 +48,13 @@ class TeacherController extends Controller
 
     public function detailSchedule($id)
     {
+        // dd($id);
+        // dd(Classes::find($id)->finish_date);
         $data = array(); 
-        if(Classes::find($id)->finish_date > now() ){
-            $data['schedules'] = Schedule::where("class_id", $id)->paginate(10);
-        } 
+        // if(Classes::find($id)->finish_date > now() ){
+        //     $data['schedules'] = Schedule::where("class_id", $id)->paginate(10);
+        // }
+        $data['schedules'] = Schedule::where("class_id", $id)->paginate(10);
         $data['class'] = Classes::find($id);
         $data['pasts'] = Schedule::where('time','<', now())->where("class_id", $id)->get();
 

@@ -25,21 +25,27 @@
                                     [   
                                     ["id"=>1, "desc"=>"7h15-9h15"],
                                     ["id"=>2, "desc"=>"7h15-9h15"],
-                                    ["id"=>3, "desc"=>"7h15-9h15"],
+                                    ["id"=>3, "desc"=>"7h150-9h15"],
                                     ["id"=>4, "desc"=>"7h15-9h15"],
                                     ["id"=>5, "desc"=>"7h15-9h15"],
                                     ["id"=>6, "desc"=>"7h15-9h15"],
                                 ];
                             ?>
+
+                            @foreach ($arr as $a)
+
+
+
+                            @endforeach
                             @foreach ($quiz as $item)
                             <tr>
                                 <td>{{ $i }}</td>
                                 <td>Buổi: {{ $item->quiz }}</td>
-                                <td>Ca:{{
-                                    
-                                }}</td>
+
                                 @foreach ($date_quiz as $key => $date)
+
                                 @if($item->quiz-1 == $key)
+                                <td>Ca: {{ $date->slot }}</td>
                                 <td>
                                     {{ date('d/m/Y', strtotime($date->time)) }}
                                 </td>
@@ -60,17 +66,17 @@
                                         <input type="hidden" name="level_id" value="{{ $item->level_id }}">
                                     </form>
                                     @else
-                                    @if($date->time <= now()) <a id="do_quiz_{{ $item->id }}"
-                                        class="btn btn-primary text-white">Làm Quiz</a>
-                                        <form id="do_quiz_form_{{ $item->id }}"
-                                            action="{{ route('do-quiz.edit',$item->quiz) }}" method="get"
-                                            style="display: none;">
-                                            @csrf
-                                            <input type="hidden" name="quiz" value="{{ $item->quiz }}">
-                                            <input type="hidden" name="level_id" value="{{ $item->level_id }}">
-                                        </form>
-                                        @endif
-                                        @endif
+                                    @if(Carbon\Carbon::parse($date->time) == Carbon\Carbon::today()) <a
+                                        id="do_quiz_{{ $item->id }}" class="btn btn-primary text-white">Làm Quiz</a>
+                                    <form id="do_quiz_form_{{ $item->id }}"
+                                        action="{{ route('do-quiz.edit',$item->quiz) }}" method="get"
+                                        style="display: none;">
+                                        @csrf
+                                        <input type="hidden" name="quiz" value="{{ $item->quiz }}">
+                                        <input type="hidden" name="level_id" value="{{ $item->level_id }}">
+                                    </form>
+                                    @endif
+                                    @endif
                                 </td>
                                 <?php break; ?>
                                 @endif

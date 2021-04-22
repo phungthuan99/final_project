@@ -51,8 +51,9 @@
             <div class="form-group">
                 <label for="">Giảng viên</label>
                 <input type="text" readonly="readonly" class="form-control" name="start_date" id=""
-                @if($class->teacher_id == null) value="Chưa có giảng viên" @else value="{{$class->Get_teacher_Name->fullname}}" @endif>
-                   
+                    @if($class->teacher_id == null) value="Chưa có giảng viên" @else
+                value="{{$class->Get_teacher_Name->fullname}}" @endif>
+
             </div>
         </div>
         <div class="col-6">
@@ -67,15 +68,15 @@
                 <label for="">Ngày kết thúc</label>
                 <input type="text" readonly="readonly" class="form-control" name="finish_date" id=""
                     value="{{$class->finish_date}}">
-            </div>
-        </div> --}}
-        <div class="col-6">
-            <div class="form-group">
-                <label for="">Số buổi đã học</label>
-                <input type="text" readonly="readonly" class="form-control" name="number_of_sessions" id=""
-                    value="{{$pasts->count('time')}}">
-            </div>
+    </div>
+    </div> --}}
+    <div class="col-6">
+        <div class="form-group">
+            <label for="">Số buổi đã học</label>
+            <input type="text" readonly="readonly" class="form-control" name="number_of_sessions" id=""
+                value="{{$pasts->count('time')}}">
         </div>
+    </div>
     </div>
     <h3 class="ml-4 mb-3">Danh sách học viên</h3>
 
@@ -92,7 +93,7 @@
                 <th scope="col">Mã học viên</th>
                 <th scope="col">Số điện thoại</th>
                 <th scope="col">Email</th>
-                <th class="text-center" >Số buổi vắng</th>
+                <th class="text-center">Số buổi vắng</th>
                 <th scope="col">Trạng thái</th>
             </tr>
         </thead>
@@ -115,14 +116,14 @@
                 <td>{{ $student->code}}</td>
                 <td>{{ $student->phone}}</td>
                 <td>{{ $student->email}}</td>
-                <td class="text-center" >
+                <td class="text-center">
                     <?php
                         $count = count($pasts);
                         $check=0;
                         ?>
                     @foreach($schedule as $key => $value)
                     @if($value == $student->id)
-                       <?php
+                    <?php
                         $check++;
                        ?>
                     @endif
@@ -164,29 +165,28 @@
                             @foreach ($allstudents as $student)
                             <tr id="tbody">
                                 <th scope="row">{{ $i++ }}</th>
-                                <td>{{ $student->fullname }}</td>
-                                <td>{{ $student->code }}</td>
-                                <td>{{ $student->phone }}</td>
-                                <td>{{ $student->email }}</td>
-                                <td>
-                                    @if($student->status == 0)<span>Khoá</span>
-                                    @else <span>Hoạt động</span>
-                                    @endif
-                                </td>
-                                <td>
-                                    <a href="{{route('class-detail.update',$student->id)}}"
-                                        class="btn btn-outline-success">
-                                        Thêm vào lớp
-                                    </a>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
+    <td>{{ $student->fullname }}</td>
+    <td>{{ $student->code }}</td>
+    <td>{{ $student->phone }}</td>
+    <td>{{ $student->email }}</td>
+    <td>
+        @if($student->status == 0)<span>Khoá</span>
+        @else <span>Hoạt động</span>
+        @endif
+    </td>
+    <td>
+        <a href="{{route('class-detail.update',$student->id)}}" class="btn btn-outline-success">
+            Thêm vào lớp
+        </a>
+    </td>
+    </tr>
+    @endforeach
+    </tbody>
+    </table>
+    </div>
 
-            </div>
-        </div>
+    </div>
+    </div>
     </div> --}}
     <!-- End Modal -->
 
@@ -211,6 +211,5 @@
     })
 
     // Ajax search
-
     </script>
     @endpush

@@ -115,6 +115,7 @@ class ClassController extends Controller
         $data['class'] = Classes::find($id);
         $data['users']=User::all();
         $data['pasts'] = Schedule::where('time','<', now())->where('class_id',$id)->get();
+        // dd($data['pasts']);
 
         
         $sche = null;

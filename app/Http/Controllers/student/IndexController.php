@@ -47,6 +47,7 @@ public function schedule()
             $schedules = Schedule::where("class_id",Student::find(Auth::guard('student')->user()->id)->class_id)->whereDate('time' , '>=', now())->paginate(10);
         }    
         $data['schedules'] = $schedules;
+        
         $class_id = Auth::guard('student')->user()->class_id;
         $id = Auth::guard('student')->user()->id;
         $data['feedback'] = DB::table('feedback')
@@ -74,7 +75,9 @@ public function schedule()
         $data['schedules']=array();
         if(Classes::find(Student::find(Auth::guard('student')->user()->id)->class_id)->finish_date > now()){
             $data['schedules'] = Schedule::where("class_id",Student::find(Auth::guard('student')->user()->id)->class_id)->get();
-            $data['pasts'] = Schedule::where('time','<', now())->where('class_id',Student::find(Auth::guard('student')->user()->id)->class_id)->get();
+            // dd(Auth::guard('student')->user()->id);
+            $data['pasts'] = Schedule::where('time','<', now())->where('class_id',Student::find(Auth::guard('student')->user()->id)->class_id)->count();
+            // dd($data['pasts']);
             $sche = null;
             $i = 1;
             foreach(Schedule::where('class_id',Student::find(Auth::guard('student')->user()->id)->class_id)->get() as $value){
@@ -96,8 +99,8 @@ public function schedule()
                                 ->get();
                                 
         $data['sessions'] = Schedule::where('class_id',Auth::guard('student')->user()->class_id)->where('time','<',now())->get();
-
-
+        $data['check'] = 0;
+        // dd($data);
         if(count($data['sessions']) <= 16){
             return view('student.pages.attendance.attendance',$data);
         }
